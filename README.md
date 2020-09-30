@@ -1,8 +1,7 @@
 
-
-The Quant SDK is the third pillar of Blocksize Capital's product offer.
+The Quant SDK is a simple python-wrapper for the Cryptocurrency trading API of Blocksize Capital.
 It is a Python interface fully integrated with Blocksize CORE™. It allows the easy automation
-of algorithmic trading strategies, as well as accessing historical market data.
+of algorithmic trading strategies, as well as accessing historical market data. For requesting a (required) account please contact __info@blocksize.capital__
 
 The functionality of the quant SDK is divided into two parts:
 
@@ -31,9 +30,6 @@ A Blocksize CORE™ API-Token can be generated in the Blocksize MATRIX™ API To
 - [Installation](#installation)
 - [Real Time Market Data](#real-time-market-data)
 - [Historical Market Data](#historical-market-data)
-=======
-- [Real Time Market Data](#real time market data)
-- [Historical Market Data](#historical market data)
 - [Trading](#trading)
 - [Balances](#balances)
 ## Installation
@@ -63,8 +59,6 @@ sdk = BlockSize('lAaUoVwxr2aOFhdS9QHa4hoVkpNPPHln99DsllOWusTLeqK2NVdIR0Ginltzr8t
 - We are now ready to utilize all the functionalities of the QuantSDK.
 
 #  Real Time Market Data 
-=======
-#  Real Time Market Data
 - The QuantSDK enables users to access real-time data using the Blocksize Infrastructure. The following chapter 
 contains information regarding how to use the specific functions in order to receive real-time market data.
  
