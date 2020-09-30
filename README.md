@@ -1,4 +1,4 @@
-# Quant SDK 
+
 
 The Quant SDK is the third pillar of Blocksize Capital's product offer.
 It is a Python interface fully integrated with Blocksize CORE™. It allows the easy automation
@@ -29,6 +29,9 @@ A Blocksize CORE™ API-Token can be generated in the Blocksize MATRIX™ API To
 ## Table of Contents
 
 - [Installation](#installation)
+- [Real Time Market Data](#real-time-market-data)
+- [Historical Market Data](#historical-market-data)
+=======
 - [Real Time Market Data](#real time market data)
 - [Historical Market Data](#historical market data)
 - [Trading](#trading)
@@ -58,6 +61,9 @@ sdk = BlockSize('lAaUoVwxr2aOFhdS9QHa4hoVkpNPPHln99DsllOWusTLeqK2NVdIR0Ginltzr8t
 
 ```
 - We are now ready to utilize all the functionalities of the QuantSDK.
+
+#  Real Time Market Data 
+=======
 #  Real Time Market Data
 - The QuantSDK enables users to access real-time data using the Blocksize Infrastructure. The following chapter 
 contains information regarding how to use the specific functions in order to receive real-time market data.
@@ -236,6 +242,7 @@ sdk.post_simulated_order('BTC','EUR','SELL',10,'Binance',True)
 - As a result, we have simulated an order which assumes infinite funds in our account.
 
 ```python
+
 {'order': {'order_id': '8f1b1ce1-b8ad-4b09-897a-fe35c3ec3eaf', 'base_currency': 'BTC', 'quote_currency': 'EUR', 'direction': 1, 'type': 1, 'quantity': '10', 'bsc_token_id': 'd5d08125-795a-4edf-bfc7-2db5b1240b37', 'user_id': 'Zh4WxmYDNihRbFLIBQk6w4QjNul1'}, 'elapsed_time_retrieval': 22910, 'elapsed_time_calculation': 177, 'average_execution_price': '9215.402037268002', 'trading_fees': '0.01', 'trades': [{'exchange': 'BINANCE', 'quantity': '10.0', 'apikey_id': '00000000-0000-0000-0000-000000000000', 'average_execution_price': '9215.402037268002', 'trading_fees': '0.01', 'funds': '-1', 'fee_bp': '10', 'trade_id': '4a363f00-9e6b-4c6e-a61b-47e4a2676f88', 'buffer_bp': '25'}]}
 
 ```
@@ -265,6 +272,7 @@ sdk.post_market_order('eth', 'eur', 'sell', 0.15, 'bittrex')
  The function returns the unique order-ID, as well as other details about the trade.
 ```python
 {'order': {'order_id': '02963299-f1e2-4ca6-b34a-2a89940ed42a', 'base_currency': 'ETH', 'quote_currency': 'EUR', 'direction': 1, 'type': 1, 'quantity': '0.15', 'bsc_token_id': '4a68e081-de91-4b40-a615-85e472a8fa75', 'user_id': 'Zh4WxmYDNihRbFLIBQk6w4QjNul1'}}
+
 ```
 In the following example, we will attempt to buy 1 BTC on the Binance Exchange:
 ```python
@@ -274,6 +282,7 @@ The purpose of this example is to show that if the balance is not sufficient to 
 the function will return ``'failed_reason': 'FAILED_REASON_INSUFFICIENT_FUNDS'``. This can be seen in the response below.
  
 ```python
+
 {'order': {'order_id': 'f8faeccb-47d9-46b0-ba28-81d54a073e46', 'base_currency': 'BTC', 'quote_currency': 'EUR', 'direction': 2, 'type': 1, 'quantity': '1', 'bsc_token_id': '4a68e081-de91-4b40-a615-85e472a8fa75', 'user_id': 'Zh4WxmYDNihRbFLIBQk6w4QjNul1'}, 'failed_reason': 'FAILED_REASON_INSUFFICIENT_FUNDS'}
 
 ```
@@ -307,6 +316,3 @@ sdk.get_exchange_balances()
 ```
 - The response will be a list which displays the total value of each cryptocurrency on each connected exchange.
 - If you have no funds on your connected exchanges, the response will simply be: `None`
-
-
-
