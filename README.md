@@ -1,7 +1,8 @@
 
-The Quant SDK is a simple python-wrapper for the Cryptocurrency trading API of Blocksize Capital.
+The Quant SDK is a python-wrapper for the Cryptocurrency trading API of Blocksize Capital.
 It is a Python interface fully integrated with Blocksize CORE™. It allows the easy automation
-of algorithmic trading strategies, as well as accessing historical market data. For requesting a (required) account please contact __info@blocksize.capital__
+of algorithmic trading strategies, as well as accessing historical market data. For requesting a (required) account please contact us via https://blocksize-capital.com/contact/
+
 
 The functionality of the quant SDK is divided into two parts:
 
