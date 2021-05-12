@@ -75,14 +75,14 @@ get_orderbook_data(self, exchanges: str, base: str, quote: str, depth: int = 1)
 - (4) Ordebook Depth - This determines how deep we look in the orderbook. If this value is not specified by the user,
 the function will automatically set this value to 1, which will return the best Bid/Ask price & assossiated volume.
 
-- In the following example, we look for the top two Bid & Ask prices for the BTC/EUR pair on the Bittrex exchange.
+- In the following example, we look for the top two Bid & Ask prices for the BTC/EUR pair on the Binance exchange.
  ```python
-sdk.get_orderbook_data('Bittrex', 'BTC', 'EUR', 2)
+sdk.get_orderbook_data('Binance', 'BTC', 'EUR', 2)
 ```
-- This function returns the current Bittrex Orderbook best Bid / Ask prices, 
+- This function returns the current Binance Orderbook best Bid / Ask prices, 
 as well as the volume assossiated with those orders.
  ```python
-[{'exchange': 'BITTREX', 'asks': [['9188.093', '0.01'], ['9189.999', '0.54465044']], 'bids': [['9136.065', '4.1373157'], ['9136.064', '0.05457277']]}]
+[{'exchange': 'Binance', 'asks': [['9188.093', '0.01'], ['9189.999', '0.54465044']], 'bids': [['9136.065', '4.1373157'], ['9136.064', '0.05457277']]}]
 ```
 ### VWAP - Volume Weighted Average Price
  ```python
