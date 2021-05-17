@@ -75,14 +75,14 @@ get_orderbook_data(self, exchanges: str, base: str, quote: str, depth: int = 1)
 - (4) Ordebook Depth - This determines how deep we look in the orderbook. If this value is not specified by the user,
 the function will automatically set this value to 1, which will return the best Bid/Ask price & assossiated volume.
 
-- In the following example, we look for the top two Bid & Ask prices for the BTC/EUR pair on the Bittrex exchange.
+- In the following example, we look for the top two Bid & Ask prices for the BTC/EUR pair on the Binance exchange.
  ```python
-sdk.get_orderbook_data('Bittrex', 'BTC', 'EUR', 2)
+sdk.get_orderbook_data('Binance', 'BTC', 'EUR', 2)
 ```
-- This function returns the current Bittrex Orderbook best Bid / Ask prices, 
+- This function returns the current Binance Orderbook best Bid / Ask prices, 
 as well as the volume assossiated with those orders.
  ```python
-[{'exchange': 'BITTREX', 'asks': [['9188.093', '0.01'], ['9189.999', '0.54465044']], 'bids': [['9136.065', '4.1373157'], ['9136.064', '0.05457277']]}]
+[{'exchange': 'Binance', 'asks': [['9188.093', '0.01'], ['9189.999', '0.54465044']], 'bids': [['9136.065', '4.1373157'], ['9136.064', '0.05457277']]}]
 ```
 ### VWAP - Volume Weighted Average Price
  ```python
@@ -139,7 +139,7 @@ data scientists who wish to analyse market data, as well as test trading strateg
 
 ### Historical OHLC 
 ```python
-get_historic_ohlc(self, base: str, quote: str, interval: str, start_date: str, end_date: str)
+get_historical_ohlc(self, base: str, quote: str, interval: str, start_date: str, end_date: str)
 ```
 - The Historical OHLC function can be used to access these important metrics across all pairs as well
 as multiple time intervals. Five input variables are required to successfully execute this function.
@@ -212,10 +212,10 @@ exchange which offers the best price)
 
 - (6) Unlimited Funds (True or False - If left unspecified, default setting is False)
 
-- In the following example, we will simulate a Buy Order of 0.2 BTC on the Bittrex Exchange.
+- In the following example, we will simulate a Buy Order of 0.2 BTC on the Binance Exchange.
 
 ```python
-sdk.post_simulated_order('BTC','EUR','BUY',0.2,'Bittrex')
+sdk.post_simulated_order('BTC','EUR','BUY',0.2,'Binance')
 ```
 - Notice the ``unlimited_funds`` variable was left unspecified, as a result, it was set to the default ```False```.
 This is because we wanted to simulate an order which would also check if there was enough funds in the account
@@ -260,9 +260,9 @@ post_market_order(self, base: str, quote: str, direction: str, quantity: Union[s
 - (5) Exchange (If left unspecified, it will automatically place the trade on the
 exchange which offers the best price)
 
-- In the following example, we will sell 0.15 ETH on the Bittrex Exchange.
+- In the following example, we will sell 0.15 ETH on the Binance Exchange.
 ```python
-sdk.post_market_order('eth', 'eur', 'sell', 0.15, 'bittrex')
+sdk.post_market_order('eth', 'eur', 'sell', 0.15, 'Binance')
 ```
  The function returns the unique order-ID, as well as other details about the trade.
 ```python
@@ -301,7 +301,7 @@ sdk.order_status('02963299-f1e2-4ca6-b34a-2a89940ed42a')
 - We can also see the ``timestamp`` assosiated with the trade  as well as the `executed_price`.
 
 ```python
-{'aggregated_status': 2, 'order': {'order_id': '02963299-f1e2-4ca6-b34a-2a89940ed42a', 'base_currency': 'ETH', 'quote_currency': 'EUR', 'direction': 1, 'type': 1, 'quantity': '0.15', 'bsc_token_id': '4a68e081-de91-4b40-a615-85e472a8fa75', 'user_id': 'Zh4WxmYDNihRbFLIBQk6w4QjNul1', 'order_timestamp': 1601289889745}, 'orderid': '02963299-f1e2-4ca6-b34a-2a89940ed42a', 'trade_status': [{'trade': {'trade_id': '30c6edae-0928-4986-acf9-2d6946c22b91', 'exchange': 'BITTREX', 'trade_quantity': '0.15'}, 'execution_status': 2, 'status_report': {'trade_status': 3, 'exchange_trade_id': '8c0b7d3c-1d22-4169-aef7-c31327582588', 'placed_timestamp': 1601289890114, 'closed_timestamp': 1601289890050, 'executed_quantity': '0.15', 'executed_price': '307.131', 'status_timestamp': 1601289896067}}], 'userid': 'Zh4WxmYDNihRbFLIBQk6w4QjNul1'}
+{'aggregated_status': 2, 'order': {'order_id': '02963299-f1e2-4ca6-b34a-2a89940ed42a', 'base_currency': 'ETH', 'quote_currency': 'EUR', 'direction': 1, 'type': 1, 'quantity': '0.15', 'bsc_token_id': '4a68e081-de91-4b40-a615-85e472a8fa75', 'user_id': 'Zh4WxmYDNihRbFLIBQk6w4QjNul1', 'order_timestamp': 1601289889745}, 'orderid': '02963299-f1e2-4ca6-b34a-2a89940ed42a', 'trade_status': [{'trade': {'trade_id': '30c6edae-0928-4986-acf9-2d6946c22b91', 'exchange': 'Binance', 'trade_quantity': '0.15'}, 'execution_status': 2, 'status_report': {'trade_status': 3, 'exchange_trade_id': '8c0b7d3c-1d22-4169-aef7-c31327582588', 'placed_timestamp': 1601289890114, 'closed_timestamp': 1601289890050, 'executed_quantity': '0.15', 'executed_price': '307.131', 'status_timestamp': 1601289896067}}], 'userid': 'Zh4WxmYDNihRbFLIBQk6w4QjNul1'}
 
 ```
 ## Balances
