@@ -2,8 +2,8 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
-    name="quant-sdk-lite-cmintern",
-    version="1.0.5",
+    name="quant-sdk",
+    version="1.0.0",
     author="Setor Blagogee, Chris Mintern",
     author_email="cm@blocksize-capital.com",
     description="A python wrapper for Blocksize Capitals Core Api",
